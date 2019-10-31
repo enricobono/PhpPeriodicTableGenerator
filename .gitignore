@@ -1,0 +1,4 @@
+/export/*
+/composer.phar
+/vendor/
+/.idea/
