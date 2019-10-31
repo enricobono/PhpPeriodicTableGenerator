@@ -11,7 +11,7 @@ class ElementRepository
     public function __construct()
     {
         $this->addElement(new Element(1, 'H', 'Hydrogen', '1.0080', '20.28', '0.00008988', '2.20'));
-        $this->addElement(new Element(2, 'He', 'Helium', '4.0026', '4.22', '0.00017', '–'));
+        $this->addElement(new Element(2, 'He', 'Helium', '4.0026', '4.22', '0.00017', '-'));
         $this->addElement(new Element(3, 'Li', 'Lithium', '6.9400', '1560', '534', '0.98'));
         $this->addElement(new Element(4, 'Be', 'Beryllium', '9.0121', '2742', '1.85', '1.57'));
         $this->addElement(new Element(5, 'B', 'Boron', '10.8100', '4200', '2.34', '2.04'));
@@ -19,7 +19,7 @@ class ElementRepository
         $this->addElement(new Element(7, 'N', 'Nitrogen', '14.0070', '77.36', '0.0012506', '3.04'));
         $this->addElement(new Element(8, 'O', 'Oxygen', '15.9990', '90.20', '0.001429', '3.44'));
         $this->addElement(new Element(9, 'F', 'Fluorine', '18.9984', '85.03', '0.001696', '3.98'));
-        $this->addElement(new Element(10, 'Ne', 'Neon', '20.1797', '27.07', '0.0008999', '–'));
+        $this->addElement(new Element(10, 'Ne', 'Neon', '20.1797', '27.07', '0.0008999', '-'));
         $this->addElement(new Element(11, 'Na', 'Sodium', '22.9897', '1156', '971', '0.93'));
         $this->addElement(new Element(12, 'Mg', 'Magnesium', '24.3050', '1363', '1738', '1.31'));
         $this->addElement(new Element(13, 'Al', 'Aluminium', '26.9815', '2792', '2698', '1.61'));
@@ -27,7 +27,7 @@ class ElementRepository
         $this->addElement(new Element(15, 'P', 'Phosphorus', '30.9737', '550', '1.82', '2.19'));
         $this->addElement(new Element(16, 'S', 'Sulfur', '32.0600', '717.87', '2067', '2.58'));
         $this->addElement(new Element(17, 'Cl', 'Chlorine', '35.4500', '239.11', '0.00321', '3.16'));
-        $this->addElement(new Element(18, 'Ar', 'Argon', '39.9480', '87.30', '0.0017', '–'));
+        $this->addElement(new Element(18, 'Ar', 'Argon', '39.9480', '87.30', '0.0017', '-'));
         $this->addElement(new Element(19, 'K', 'Potassium', '39.0983', '1032', '862', '0.82'));
         $this->addElement(new Element(20, 'Ca', 'Calcium', '40.0780', '1757', '1.54', '1'));
         $this->addElement(new Element(21, 'Sc', 'Scandium', '44.9559', '3109', '2989', '1.36'));
@@ -109,25 +109,25 @@ class ElementRepository
         $this->addElement(new Element(97, 'Bk', 'Berkelium', '(247)', '2900', '14.79', '1.3'));
         $this->addElement(new Element(98, 'Cf', 'Californium', '(251)', '-1743', '15.1', '1.3'));
         $this->addElement(new Element(99, 'Es', 'Einsteinium', '(252)', '-1269', '8.84', '1.3'));
-        $this->addElement(new Element(100, 'Fm', 'Fermium', '(257)', '–', '(9.7)', '1.3'));
-        $this->addElement(new Element(101, 'Md', 'Mendelevium', '(258)', '–', '(10.3)', '1.3'));
-        $this->addElement(new Element(102, 'No', 'Nobelium', '(259)', '–', '(9.9)', '1.3'));
-        $this->addElement(new Element(103, 'Lr', 'Lawrencium', '(266)', '–', '(15.6)', '1.3'));
-        $this->addElement(new Element(104, 'Rf', 'Rutherfordium', '(267)', '-5800', '(23.2)', '–'));
-        $this->addElement(new Element(105, 'Db', 'Dubnium', '(268)', '–', '(29.3)', '–'));
-        $this->addElement(new Element(106, 'Sg', 'Seaborgium', '(269)', '–', '(35.0)', '–'));
-        $this->addElement(new Element(107, 'Bh', 'Bohrium', '(270)', '–', '(37.1)', '–'));
-        $this->addElement(new Element(108, 'Hs', 'Hassium', '(270)', '–', '(40.7)', '–'));
-        $this->addElement(new Element(109, 'Mt', 'Meitnerium', '(278)', '–', '(37.4)', '–'));
-        $this->addElement(new Element(110, 'Ds', 'Darmstadtium', '(281)', '–', '(34.8)', '–'));
-        $this->addElement(new Element(111, 'Rg', 'Roentgenium', '(282)', '–', '(28.7)', '–'));
-        $this->addElement(new Element(112, 'Cn', 'Copernicium', '(285)', '(340)', '(14.0)', '–'));
-        $this->addElement(new Element(113, 'Nh', 'Nihonium', '(286)', '(1400)', '(16)', '–'));
-        $this->addElement(new Element(114, 'Fl', 'Flerovium', '(289)', '~210', '(14)', '–'));
-        $this->addElement(new Element(115, 'Mc', 'Moscovium', '(290)', '(1400)', '(13.5)', '–'));
-        $this->addElement(new Element(116, 'Lv', 'Livermorium', '(293)', '(1100)', '(12.9)', '–'));
-        $this->addElement(new Element(117, 'Ts', 'Tennessine', '(294)', '(883)', '(7.2)', '–'));
-        $this->addElement(new Element(118, 'Og', 'Oganesson', '(294)', '(~350)', '(5.0)', '–'));
+        $this->addElement(new Element(100, 'Fm', 'Fermium', '(257)', '-', '(9.7)', '1.3'));
+        $this->addElement(new Element(101, 'Md', 'Mendelevium', '(258)', '-', '(10.3)', '1.3'));
+        $this->addElement(new Element(102, 'No', 'Nobelium', '(259)', '-', '(9.9)', '1.3'));
+        $this->addElement(new Element(103, 'Lr', 'Lawrencium', '(266)', '-', '(15.6)', '1.3'));
+        $this->addElement(new Element(104, 'Rf', 'Rutherfordium', '(267)', '-5800', '(23.2)', '-'));
+        $this->addElement(new Element(105, 'Db', 'Dubnium', '(268)', '-', '(29.3)', '-'));
+        $this->addElement(new Element(106, 'Sg', 'Seaborgium', '(269)', '-', '(35.0)', '-'));
+        $this->addElement(new Element(107, 'Bh', 'Bohrium', '(270)', '-', '(37.1)', '-'));
+        $this->addElement(new Element(108, 'Hs', 'Hassium', '(270)', '-', '(40.7)', '-'));
+        $this->addElement(new Element(109, 'Mt', 'Meitnerium', '(278)', '-', '(37.4)', '-'));
+        $this->addElement(new Element(110, 'Ds', 'Darmstadtium', '(281)', '-', '(34.8)', '-'));
+        $this->addElement(new Element(111, 'Rg', 'Roentgenium', '(282)', '-', '(28.7)', '-'));
+        $this->addElement(new Element(112, 'Cn', 'Copernicium', '(285)', '(340)', '(14.0)', '-'));
+        $this->addElement(new Element(113, 'Nh', 'Nihonium', '(286)', '(1400)', '(16)', '-'));
+        $this->addElement(new Element(114, 'Fl', 'Flerovium', '(289)', '~210', '(14)', '-'));
+        $this->addElement(new Element(115, 'Mc', 'Moscovium', '(290)', '(1400)', '(13.5)', '-'));
+        $this->addElement(new Element(116, 'Lv', 'Livermorium', '(293)', '(1100)', '(12.9)', '-'));
+        $this->addElement(new Element(117, 'Ts', 'Tennessine', '(294)', '(883)', '(7.2)', '-'));
+        $this->addElement(new Element(118, 'Og', 'Oganesson', '(294)', '(~350)', '(5.0)', '-'));
     }
 
     /**
