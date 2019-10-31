@@ -14,33 +14,44 @@ class Element
     /** @var int */
     private $atomicNumber;
 
-    /** @var float */
+    /** @var string */
     private $atomicWeight;
 
-    /** @var float */
+    /** @var string */
     private $heatOfFusion;
 
-    /** @var float */
+    /** @var string */
     private $density;
 
-    /** @var float */
+    /** @var string */
     private $electronegativity;
 
+    /**
+     * Element constructor.
+     *
+     * @param string $symbol
+     * @param string $name
+     * @param int    $atomicNumber
+     * @param string $atomicWeight
+     * @param string $heatOfFusion
+     * @param string $density
+     * @param string $electronegativity
+     */
     public function __construct(
         string $symbol,
         string $name,
         int $atomicNumber,
-        float $atomicWeight,
-        float $heatOfFusion,
-        float $density,
-        float $electronegativity
+        string $atomicWeight,
+        string $heatOfFusion,
+        string $density,
+        string $electronegativity
     ) {
-        $this->symbol            = $symbol;
-        $this->name              = $name;
-        $this->atomicNumber      = $atomicNumber;
-        $this->atomicWeight      = $atomicWeight;
-        $this->heatOfFusion      = $heatOfFusion;
-        $this->density           = $density;
+        $this->symbol = $symbol;
+        $this->name = $name;
+        $this->atomicNumber = $atomicNumber;
+        $this->atomicWeight = $atomicWeight;
+        $this->heatOfFusion = $heatOfFusion;
+        $this->density = $density;
         $this->electronegativity = $electronegativity;
     }
 
@@ -69,33 +80,33 @@ class Element
     }
 
     /**
-     * @return float
+     * @return string
      */
-    public function getAtomicWeight(): float
+    public function getAtomicWeight(): string
     {
         return $this->atomicWeight;
     }
 
     /**
-     * @return float
+     * @return string
      */
-    public function getHeatOfFusion(): float
+    public function getHeatOfFusion(): string
     {
         return $this->heatOfFusion;
     }
 
     /**
-     * @return float
+     * @return string
      */
-    public function getDensity(): float
+    public function getDensity(): string
     {
         return $this->density;
     }
 
     /**
-     * @return float
+     * @return string
      */
-    public function getElectronegativity(): float
+    public function getElectronegativity(): string
     {
         return $this->electronegativity;
     }
