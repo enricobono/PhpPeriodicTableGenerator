@@ -3,14 +3,17 @@
 namespace PeriodicTable\Elements;
 
 use Intervention\Image\AbstractFont;
+use Intervention\Image\AbstractShape;
 use Intervention\Image\ImageManager;
 
 class ElementExporter
 {
 
+
     /** @var ImageManager */
     private $imageManager;
 
+    private const MARGIN = 20;
 
     private const IMAGE_DIMENSION = 1000;
 
@@ -28,15 +31,18 @@ class ElementExporter
     {
         $image = $this->imageManager->canvas(self::IMAGE_DIMENSION, self::IMAGE_DIMENSION);
 
-        $image->text($element->getSymbol(), 10, 20, function (AbstractFont $font) {
+        $image->rectangle(self::MARGIN,
+            self::MARGIN, self::IMAGE_DIMENSION - self::MARGIN, self::IMAGE_DIMENSION - self::MARGIN, function (AbstractShape $draw) {
+            $draw->border(2, '#000');
+        });
 
-            $font->file(3);
-            //            $font->file('../../../fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf');
-            $font->size(14);
-//            $font->color('#000000');
-//            $font->align('center');
-//            $font->valign('top');
-//            $font->angle(45);
+        $image->text($element->getSymbol(), self::MARGIN, 400, function (AbstractFont $font) {
+            $font->file('fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf');
+            $font->size(400);
+            //            $font->color('#000000');
+            //            $font->align('center');
+            //            $font->valign('top');
+            //            $font->angle(45);
         });
 
 
