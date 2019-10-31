@@ -6,6 +6,7 @@ use Intervention\Image\AbstractFont;
 use Intervention\Image\AbstractShape;
 use Intervention\Image\ImageManager;
 
+
 class ElementExporter
 {
 
@@ -14,6 +15,8 @@ class ElementExporter
     private $imageManager;
 
     private const MARGIN = 20;
+
+    private const FONT_SIZE = 100;
 
     private const IMAGE_DIMENSION = 1000;
 
@@ -31,18 +34,61 @@ class ElementExporter
     {
         $image = $this->imageManager->canvas(self::IMAGE_DIMENSION, self::IMAGE_DIMENSION);
 
-        $image->rectangle(self::MARGIN,
-            self::MARGIN, self::IMAGE_DIMENSION - self::MARGIN, self::IMAGE_DIMENSION - self::MARGIN, function (AbstractShape $draw) {
-            $draw->border(2, '#000');
-        });
+        $image->rectangle(
+            self::MARGIN,
+            self::MARGIN,
+            self::IMAGE_DIMENSION - self::MARGIN,
+            self::IMAGE_DIMENSION - self::MARGIN,
+            function (AbstractShape $draw) {
+                $draw->border(5, '#000');
+            });
 
-        $image->text($element->getSymbol(), self::MARGIN, 400, function (AbstractFont $font) {
+        $image->text($element->getSymbol(), self::MARGIN * 2, 400, function (AbstractFont $font) {
             $font->file('fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf');
             $font->size(400);
-            //            $font->color('#000000');
-            //            $font->align('center');
-            //            $font->valign('top');
-            //            $font->angle(45);
+            $font->valign('top');
+        });
+
+        $image->text($element->getAtomicNumber(), self::MARGIN * 2, 300, function  (AbstractFont $font) {
+            $font->file('fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf');
+            $font->size(self::FONT_SIZE);
+            $font->align('left');
+            $font->valign('top');
+        });
+
+        $image->text($element->getName(), self::IMAGE_DIMENSION / 2, self::MARGIN * 2, function (AbstractFont $font) {
+            $font->file('fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf');
+            $font->size(self::FONT_SIZE);
+            $font->align('center');
+            $font->valign('top');
+        });
+
+        $image->text($element->getAtomicWeight(), self::MARGIN * 2, 680, function  (AbstractFont $font) {
+            $font->file('fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf');
+            $font->size(self::FONT_SIZE);
+            $font->align('left');
+            $font->valign('top');
+        });
+
+        $image->text($element->getHeatOfFusion(), self::IMAGE_DIMENSION - self::MARGIN * 2, 300, function  (AbstractFont $font) {
+            $font->file('fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf');
+            $font->size(self::FONT_SIZE);
+            $font->align('right');
+            $font->valign('top');
+        });
+
+        $image->text($element->getDensity(), self::IMAGE_DIMENSION - self::MARGIN * 2, 350, function  (AbstractFont $font) {
+            $font->file('fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf');
+            $font->size(self::FONT_SIZE);
+            $font->align('right');
+            $font->valign('top');
+        });
+
+        $image->text($element->getElectronegativity(), self::IMAGE_DIMENSION - self::MARGIN * 2, 400, function  (AbstractFont $font) {
+            $font->file('fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf');
+            $font->size(self::FONT_SIZE);
+            $font->align('right');
+            $font->valign('top');
         });
 
 
