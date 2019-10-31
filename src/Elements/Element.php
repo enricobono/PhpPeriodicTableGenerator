@@ -38,9 +38,9 @@ class Element
      * @param string $electronegativity
      */
     public function __construct(
+        int $atomicNumber,
         string $symbol,
         string $name,
-        int $atomicNumber,
         string $atomicWeight,
         string $heatOfFusion,
         string $density,

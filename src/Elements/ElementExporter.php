@@ -17,8 +17,8 @@ class ElementExporter
     private const IMAGE_DIMENSION = 1000;
 
     private const FONT = 'fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf';
-    private const FONT_SIZE = 100;
-    private const FONT_SIZE_LARGE = 400;
+    private const FONT_SIZE = 125;
+    private const FONT_SIZE_LARGE = 500;
 
     /**
      * ElementExporter constructor.
@@ -68,19 +68,6 @@ class ElementExporter
      * @param Element $element
      * @param Image   $image
      */
-    private function drawSymbol(Element $element, Image $image): void
-    {
-        $image->text($element->getSymbol(), self::MARGIN * 2, 400, function (AbstractFont $font) {
-            $font->file(self::FONT);
-            $font->size(self::FONT_SIZE_LARGE);
-            $font->valign('top');
-        });
-    }
-
-    /**
-     * @param Element $element
-     * @param Image   $image
-     */
     private function drawName(Element $element, Image $image)
     {
         $image->text(
@@ -119,12 +106,30 @@ class ElementExporter
      * @param Element $element
      * @param Image   $image
      */
+    private function drawSymbol(Element $element, Image $image): void
+    {
+        $image->text(
+            $element->getSymbol(),
+            self::MARGIN * 2,
+            300 + self::FONT_SIZE,
+            function (AbstractFont $font) {
+                $font->file(self::FONT);
+                $font->size(self::FONT_SIZE_LARGE);
+                $font->valign('top');
+            }
+        );
+    }
+
+    /**
+     * @param Element $element
+     * @param Image   $image
+     */
     private function drawAtomicWeight(Element $element, Image $image): void
     {
         $image->text(
             $element->getAtomicWeight(),
             self::MARGIN * 2,
-            680,
+            300 + self::FONT_SIZE_LARGE,
             function (AbstractFont $font) {
                 $font->file(self::FONT);
                 $font->size(self::FONT_SIZE);
@@ -161,7 +166,7 @@ class ElementExporter
         $image->text(
             $element->getDensity(),
             self::IMAGE_DIMENSION - self::MARGIN * 2,
-            350,
+            300 + self::FONT_SIZE,
             function (AbstractFont $font) {
                 $font->file(self::FONT);
                 $font->size(self::FONT_SIZE);
@@ -180,7 +185,7 @@ class ElementExporter
         $image->text(
             $element->getElectronegativity(),
             self::IMAGE_DIMENSION - self::MARGIN * 2,
-            400,
+            300 + self::FONT_SIZE * 2,
             function (AbstractFont $font) {
                 $font->file(self::FONT);
                 $font->size(self::FONT_SIZE);
