@@ -11,9 +11,16 @@ $elements = $elementRepository->getElements();
 
 $exporter = new ElementExporter(new ImageManager());
 
+$count = 0;
 foreach ($elements as $element) {
-    $exporter->export($element);
-    echo '.';
+
+    try {
+        $exporter->export($element);
+        $count++;
+        echo '.';
+    } catch (Exception $e) {
+        die($e->getMessage());
+    }
 }
 
-echo "\nCompleted";
+echo "\nCompleted: $count elements\n";

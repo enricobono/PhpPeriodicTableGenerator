@@ -14,10 +14,11 @@ class ElementExporter
     private $imageManager;
 
     private const MARGIN = 20;
+    private const PADDING = 30;
     private const IMAGE_DIMENSION = 1000;
 
     private const FONT = 'fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf';
-    private const FONT_SIZE = 125;
+    private const FONT_SIZE = 150;
     private const FONT_SIZE_LARGE = 500;
 
     /**
@@ -62,6 +63,16 @@ class ElementExporter
                 $draw->border(5, '#000');
             }
         );
+
+        $image->rectangle(
+            self::IMAGE_DIMENSION / 2 - self::MARGIN * 4,
+            self::MARGIN,
+            self::IMAGE_DIMENSION / 2 + self::MARGIN * 4,
+            self::MARGIN,
+            function (AbstractShape $draw) {
+                $draw->border(5, '#fff');
+            }
+        );
     }
 
     /**
@@ -73,7 +84,7 @@ class ElementExporter
         $image->text(
             $element->getName(),
             self::IMAGE_DIMENSION / 2,
-            self::MARGIN * 2,
+            self::PADDING * 2,
             function (AbstractFont $font) {
                 $font->file(self::FONT);
                 $font->size(self::FONT_SIZE);
@@ -91,7 +102,7 @@ class ElementExporter
     {
         $image->text(
             $element->getAtomicNumber(),
-            self::MARGIN * 2,
+            self::PADDING * 2,
             300,
             function (AbstractFont $font) {
                 $font->file(self::FONT);
@@ -110,7 +121,7 @@ class ElementExporter
     {
         $image->text(
             $element->getSymbol(),
-            self::MARGIN * 2,
+            self::PADDING * 2,
             300 + self::FONT_SIZE,
             function (AbstractFont $font) {
                 $font->file(self::FONT);
@@ -128,8 +139,8 @@ class ElementExporter
     {
         $image->text(
             $element->getAtomicWeight(),
-            self::MARGIN * 2,
-            300 + self::FONT_SIZE_LARGE,
+            self::PADDING * 2,
+            300 + self::FONT_SIZE_LARGE + 15,
             function (AbstractFont $font) {
                 $font->file(self::FONT);
                 $font->size(self::FONT_SIZE);
@@ -146,7 +157,7 @@ class ElementExporter
     {
         $image->text(
             $element->getHeatOfFusion(),
-            self::IMAGE_DIMENSION - self::MARGIN * 2,
+            self::IMAGE_DIMENSION - self::PADDING * 2,
             300,
             function (AbstractFont $font) {
                 $font->file(self::FONT);
@@ -165,7 +176,7 @@ class ElementExporter
     {
         $image->text(
             $element->getDensity(),
-            self::IMAGE_DIMENSION - self::MARGIN * 2,
+            self::IMAGE_DIMENSION - self::PADDING * 2,
             300 + self::FONT_SIZE,
             function (AbstractFont $font) {
                 $font->file(self::FONT);
@@ -184,7 +195,7 @@ class ElementExporter
     {
         $image->text(
             $element->getElectronegativity(),
-            self::IMAGE_DIMENSION - self::MARGIN * 2,
+            self::IMAGE_DIMENSION - self::PADDING * 2,
             300 + self::FONT_SIZE * 2,
             function (AbstractFont $font) {
                 $font->file(self::FONT);
